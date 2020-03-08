@@ -13,6 +13,3 @@ before_install:
   - sudo service munge start
 
 script: echo "Hello world"
-
-notifications:
-  slack: capstoneteam2019-2020:5aH86AI0PIEUfVFA0LFc45sf
