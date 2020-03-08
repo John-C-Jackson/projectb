@@ -1,0 +1,18 @@
+# see https://github.com/tdhock/PeakSegPipeline/blob/master/.travis.yml
+
+language: python
+python:
+    - "2.7"
+
+before_install:
+  - sudo mkdir /etc/slurm-llnl
+  - sudo cp slurm.conf /etc/slurm-llnl
+  - cp batchtools.conf.R tests/testthat
+  - sudo apt-get install -y slurm-llnl
+  - sudo /usr/sbin/create-munge-key
+  - sudo service munge start
+
+script: echo "Hello world"
+
+notifications:
+  slack: capstoneteam2019-2020:5aH86AI0PIEUfVFA0LFc45sf
